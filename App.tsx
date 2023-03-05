@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import RootNavigation from './src/navigatios/stack';
 import {colors} from './src/constants/';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import SplashScreen from 'react-native-splash-screen';
 
 function App(): JSX.Element {
   const [isAppFirstLaunched, setIsAppFirstLaunched] = useState<boolean | null>(
@@ -23,6 +24,7 @@ function App(): JSX.Element {
       }
     };
     checkIfAppIsFirstLaunched();
+    SplashScreen.hide();
   }, []);
 
   if (isAppFirstLaunched == null) {
