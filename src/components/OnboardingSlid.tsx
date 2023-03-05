@@ -2,9 +2,9 @@ import {Text, View} from 'react-native';
 import React from 'react';
 import {OnBoardingScreenData} from '../@types';
 
-interface OnboardingSlidProps {
+type OnboardingSlidProps = {
   item: OnBoardingScreenData;
-}
+};
 
 const OnboardingSlid = ({item}: OnboardingSlidProps): JSX.Element => {
   return (

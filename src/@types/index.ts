@@ -1,8 +1,8 @@
 import React from 'react';
 
-export interface OnBoardingScreenData {
+export type OnBoardingScreenData = {
   id: number;
   title: string;
   description: string;
   lottieImage: React.ReactNode;
-}
+};
