@@ -5,14 +5,21 @@ import OnBoarding from '../screens/OnBoarding';
 
 const Stack = createStackNavigator();
 
-export default function RootNavigation(): JSX.Element {
+export default function RootNavigation({
+  firstLaunched,
+}: {
+  firstLaunched: boolean;
+}): JSX.Element {
   return (
     <Stack.Navigator
       initialRouteName="OnBoarding"
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="OnBoarding" component={OnBoarding} />
+      {firstLaunched && (
+        <Stack.Screen name="OnBoarding" component={OnBoarding} />
+      )}
+
       <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );
