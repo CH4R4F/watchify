@@ -79,7 +79,7 @@ const OnBoarding = ({
 
   // fires after clicking on Get started button
   const getStarted = (): void => {
-    navigation.replace('Home');
+    navigation.replace('MainHome');
   };
 
   return (
