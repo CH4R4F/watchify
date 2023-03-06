@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const Home = (): JSX.Element => {
+const Favorites = (): JSX.Element => {
   return (
     <View className="flex-1 bg-primary_bg">
-      <Text>Home</Text>
+      <Text>Favorites</Text>
     </View>
   );
 };
 
-export default Home;
+export default Favorites;
