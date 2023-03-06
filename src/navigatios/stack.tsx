@@ -1,7 +1,8 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Home from '../screens/Home';
 import OnBoarding from '../screens/OnBoarding';
+import MainNavigation from './main';
+import {colors} from '../constants';
 
 const Stack = createStackNavigator();
 
@@ -15,12 +16,13 @@ export default function RootNavigation({
       initialRouteName="OnBoarding"
       screenOptions={{
         headerShown: false,
+        cardStyle: {backgroundColor: colors.primary_bg},
       }}>
       {firstLaunched && (
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
       )}
 
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="MainHome" component={MainNavigation} />
     </Stack.Navigator>
   );
 }
