@@ -30,13 +30,13 @@ const TrendingMovieCard = ({
       <LinearGradient
         colors={[colors.primary_bg_soft, '#00000000']}
         start={{x: 0, y: 0}}
-        end={{x: 0, y: 0.5}}
+        end={{x: 0, y: 0.7}}
         className="absolute inset-0 rounded-2xl z-10"
       />
       <View className="absolute inset-0 rounded-2xl overflow-hidden">
         <ImageBackground source={{uri: image}} className="w-full h-full" />
       </View>
-      <Text className="z-30 text-primary_text font-text-700">
+      <Text className="z-30 text-primary_text font-text-700 text-xl">
         {original_title}
       </Text>
       <Text className="z-30 text-primary_text font-text-400 mt-2">{year}</Text>
