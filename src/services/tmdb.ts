@@ -9,8 +9,24 @@ const tmdb: AxiosInstance = axios.create({
   },
 });
 
+// get configuration
+export const getConfiguration = async () => {
+  const {data} = await tmdb.get('/configuration');
+  return data;
+};
+
 // get popular movies
 export const getPopularMovies = async () => {
   const {data} = await tmdb.get('/movie/popular');
+  return data;
+};
+
+// get trending movies
+export const getTrendingMovies = async (page: number = 1) => {
+  const {data} = await tmdb.get('/trending/movie/week', {
+    params: {
+      page,
+    },
+  });
   return data;
 };

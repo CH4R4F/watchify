@@ -6,6 +6,7 @@ import {colors} from './src/constants/';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SplashScreen from 'react-native-splash-screen';
 import {InternetConnectivityProvider} from './src/contexts/InternetConnectivity';
+import {DataProvider} from './src/contexts/DataProvider';
 
 function App(): JSX.Element {
   const [isAppFirstLaunched, setIsAppFirstLaunched] = useState<boolean | null>(
@@ -34,10 +35,12 @@ function App(): JSX.Element {
 
   return (
     <InternetConnectivityProvider>
-      <NavigationContainer>
-        <StatusBar backgroundColor={colors.primary_bg} />
-        <RootNavigation firstLaunched={isAppFirstLaunched} />
-      </NavigationContainer>
+      <DataProvider>
+        <NavigationContainer>
+          <StatusBar backgroundColor={colors.primary_bg} />
+          <RootNavigation firstLaunched={isAppFirstLaunched} />
+        </NavigationContainer>
+      </DataProvider>
     </InternetConnectivityProvider>
   );
 }
