@@ -14,6 +14,14 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-watchify-watchifyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-watchify-watchifyTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		7AA47C1107374D87A58B8C59 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BADD1D41E5D64166A09810ED /* Lato-Black.ttf */; };
+		4AE0973A59284872B012CFBA /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24101247BE184B919F5A90E3 /* Lato-Bold.ttf */; };
+		EB2DE94C8CA7476E88A8371A /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31517FDF06644A9785E3D465 /* Lato-Light.ttf */; };
+		16BA29F23A514E0ABF9A1D10 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7472B05637054F24B7147CD2 /* Lato-Regular.ttf */; };
+		8BC0BE8B234C4C5B8F6CDCF2 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90F57CF1D99C41569D3A9687 /* Poppins-Black.ttf */; };
+		D288E1D841FE413E83BFBC0C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2D58950632349FFA1B20D95 /* Poppins-Bold.ttf */; };
+		F9BB4BCED22240DBB9630C4D /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAE5766D82AE454A9F3023FB /* Poppins-Medium.ttf */; };
+		814E5F8C917B4B01BD7AE243 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37CFDCBA8AA3427985276E8B /* Poppins-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = watchify/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-watchify-watchifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watchify-watchifyTests.release.xcconfig"; path = "Target Support Files/Pods-watchify-watchifyTests/Pods-watchify-watchifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		BADD1D41E5D64166A09810ED /* Lato-Black.ttf */ = {isa = PBXFileReference; name = "Lato-Black.ttf"; path = "../assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		24101247BE184B919F5A90E3 /* Lato-Bold.ttf */ = {isa = PBXFileReference; name = "Lato-Bold.ttf"; path = "../assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		31517FDF06644A9785E3D465 /* Lato-Light.ttf */ = {isa = PBXFileReference; name = "Lato-Light.ttf"; path = "../assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7472B05637054F24B7147CD2 /* Lato-Regular.ttf */ = {isa = PBXFileReference; name = "Lato-Regular.ttf"; path = "../assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		90F57CF1D99C41569D3A9687 /* Poppins-Black.ttf */ = {isa = PBXFileReference; name = "Poppins-Black.ttf"; path = "../assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E2D58950632349FFA1B20D95 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AAE5766D82AE454A9F3023FB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		37CFDCBA8AA3427985276E8B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +138,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				4084C714051349698FD82999 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +164,22 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		4084C714051349698FD82999 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				BADD1D41E5D64166A09810ED /* Lato-Black.ttf */,
+				24101247BE184B919F5A90E3 /* Lato-Bold.ttf */,
+				31517FDF06644A9785E3D465 /* Lato-Light.ttf */,
+				7472B05637054F24B7147CD2 /* Lato-Regular.ttf */,
+				90F57CF1D99C41569D3A9687 /* Poppins-Black.ttf */,
+				E2D58950632349FFA1B20D95 /* Poppins-Bold.ttf */,
+				AAE5766D82AE454A9F3023FB /* Poppins-Medium.ttf */,
+				37CFDCBA8AA3427985276E8B /* Poppins-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +277,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				7AA47C1107374D87A58B8C59 /* Lato-Black.ttf in Resources */,
+				4AE0973A59284872B012CFBA /* Lato-Bold.ttf in Resources */,
+				EB2DE94C8CA7476E88A8371A /* Lato-Light.ttf in Resources */,
+				16BA29F23A514E0ABF9A1D10 /* Lato-Regular.ttf in Resources */,
+				8BC0BE8B234C4C5B8F6CDCF2 /* Poppins-Black.ttf in Resources */,
+				D288E1D841FE413E83BFBC0C /* Poppins-Bold.ttf in Resources */,
+				F9BB4BCED22240DBB9630C4D /* Poppins-Medium.ttf in Resources */,
+				814E5F8C917B4B01BD7AE243 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
