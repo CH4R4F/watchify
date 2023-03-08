@@ -1,8 +1,9 @@
 import React, {useContext} from 'react';
-import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import DataContext from '../contexts/DataProvider';
 import {colors} from '../constants';
+import FastImage from 'react-native-fast-image';
 
 type Props = {
   id: number | string;
@@ -19,7 +20,7 @@ const TrendingMovieCard = ({
 }: Props) => {
   const {base_url, sizes} = useContext(DataContext);
 
-  const image = `${base_url}${sizes[2]}${poster_path}`;
+  const image = `${base_url}${sizes[3]}${poster_path}`;
   const year = release_date?.split('-')[0];
 
   return (
@@ -34,7 +35,11 @@ const TrendingMovieCard = ({
         className="absolute inset-0 rounded-2xl z-10"
       />
       <View className="absolute inset-0 rounded-2xl overflow-hidden">
-        <ImageBackground source={{uri: image}} className="w-full h-full" />
+        <FastImage
+          source={{uri: image}}
+          className="w-full h-full"
+          resizeMode={FastImage.resizeMode.cover}
+        />
       </View>
       <Text className="z-30 text-primary_text font-text-700 text-xl">
         {original_title}
