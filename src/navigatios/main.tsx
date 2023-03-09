@@ -34,8 +34,8 @@ const Main = (): JSX.Element => {
         tabBarStyle: {
           backgroundColor: colors.secondary_bg,
           height: 60,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
+          // borderTopLeftRadius: 20,
+          // borderTopRightRadius: 20,
           borderTopColor: 'none',
           margin: 0,
         },

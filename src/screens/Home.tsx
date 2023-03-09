@@ -6,6 +6,7 @@ import {colors} from '../constants';
 import TrendingMovies from '../components/Home/TrendingMovies';
 import Categories from '../components/Home/Categories';
 import {MovieGenre} from '../@types';
+import {ScrollView} from 'react-native';
 
 const Home = (): JSX.Element => {
   const [movies, setMovies] = useState([]);
@@ -22,13 +23,19 @@ const Home = (): JSX.Element => {
   }, [movies]);
 
   return (
-    <LinearGradient
-      colors={[colors.primary_bg, colors.secondary_bg, colors.primary_bg]}
-      className="flex-1 bg-gradient-to-t from-primary_bg via-secondary_bg to-primary_bg">
-      <Header />
-      {TrendingMoviesMemoComponent}
-      <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-    </LinearGradient>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      className="min-h-screen"
+      contentContainerStyle={{paddingBottom: 50, minHeight: '100%'}}>
+      <LinearGradient
+        colors={[colors.primary_bg, colors.secondary_bg, colors.primary_bg]}
+        className="flex-1 bg-gradient-to-t from-primary_bg via-secondary_bg to-primary_bg">
+        <Header />
+        {TrendingMoviesMemoComponent}
+
+        <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+      </LinearGradient>
+    </ScrollView>
   );
 };
 

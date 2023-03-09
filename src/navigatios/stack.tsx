@@ -6,21 +6,15 @@ import {colors} from '../constants';
 
 const Stack = createStackNavigator();
 
-export default function RootNavigation({
-  firstLaunched,
-}: {
-  firstLaunched: boolean;
-}): JSX.Element {
+export default function RootNavigation({firstLaunched}: {firstLaunched: boolean}): JSX.Element {
   return (
     <Stack.Navigator
       initialRouteName="OnBoarding"
       screenOptions={{
         headerShown: false,
-        cardStyle: {backgroundColor: colors.primary_bg},
+        cardStyle: {backgroundColor: 'transparent'},
       }}>
-      {firstLaunched && (
-        <Stack.Screen name="OnBoarding" component={OnBoarding} />
-      )}
+      {firstLaunched && <Stack.Screen name="OnBoarding" component={OnBoarding} />}
 
       <Stack.Screen name="MainHome" component={MainNavigation} />
     </Stack.Navigator>
