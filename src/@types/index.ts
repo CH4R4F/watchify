@@ -6,3 +6,17 @@ export type OnBoardingScreenData = {
   description: string;
   lottieImage: React.ReactNode;
 };
+
+export type MovieGenre = {
+  all: null | '';
+  action: number;
+  adventure: number;
+  comedy: number;
+  crime: number;
+  documentary: number;
+  drama: number;
+  fantasy: number;
+  history: number;
+  horror: number;
+  romance: number;
+};

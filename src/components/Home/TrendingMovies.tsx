@@ -44,9 +44,7 @@ const TrendingMovies = ({movies}: TrendingMoviesProps): JSX.Element => {
 
   return (
     <View className="my-7">
-      <Text className="text-2xl text-primary_text font-heading-500 px-4">
-        Trending Movies
-      </Text>
+      <Text className="text-2xl text-primary_text font-heading-500 px-4">Trending Movies</Text>
       <FlatList
         maxToRenderPerBatch={3}
         data={movies}
