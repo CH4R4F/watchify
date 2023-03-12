@@ -10,9 +10,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 type Props = {
   movie: MovieCardProps;
+  onPress: () => void;
 };
 
-const MovieCard = ({movie}: Props) => {
+const MovieCard = ({movie, onPress}: Props) => {
   const [loading, setLoading] = useState(true);
 
   const {base_url, sizes} = useContext(DataContext);
@@ -20,7 +21,7 @@ const MovieCard = ({movie}: Props) => {
   const image = `${base_url}${sizes[3]}${movie.poster_path}`;
 
   return (
-    <TouchableOpacity activeOpacity={0.8} className="relative w-[150px] h-48 rounded-2xl p-4 mr-5">
+    <TouchableOpacity onPress={onPress} activeOpacity={0.8} className="relative w-[150px] h-48 rounded-2xl p-4 mr-5">
       <LinearGradient
         colors={[colors.primary_bg_soft, '#00000000']}
         start={{x: 0, y: 0}}

@@ -1,15 +1,16 @@
 import {View, Text} from 'react-native';
 import React, {useState, useEffect} from 'react';
-import {MovieCardProps, MovieGenre} from '../../@types';
+import {MovieCardProps, MovieGenre, NavigationProps} from '../../@types';
 import {genres} from '../../constants';
 import {getTopRatedMovies} from '../../services/tmdb';
 import CardsRow from '../CardsRow';
 
 type Props = {
   category: keyof MovieGenre;
+  navigation: NavigationProps<'MainHome'>;
 };
 
-const TopRated = ({category}: Props) => {
+const TopRated = ({category, navigation}: Props) => {
   const [movies, setMovies] = useState<MovieCardProps[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -29,7 +30,7 @@ const TopRated = ({category}: Props) => {
         <Text className="text-lg text-primary_text font-heading-500">Top Rated </Text>
       </Text>
       {/* {loading && <Text>Loading...</Text>} */}
-      <CardsRow loading={loading} movies={movies} />
+      <CardsRow category={category} navigation={navigation} type="top_rated" loading={loading} movies={movies} />
     </View>
   );
 };

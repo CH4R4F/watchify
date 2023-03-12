@@ -4,6 +4,8 @@ import React, {useCallback} from 'react';
 import {FlatList, Text, View} from 'react-native';
 import SeeAllButton from '../SeeAllButton';
 import TrendingMovieCard from '../TrendingMovieCard';
+import {NavigationProps} from '../../@types';
+import {genres} from '../../constants';
 
 interface Movie {
   id: number | string;
@@ -14,9 +16,10 @@ interface Movie {
 
 interface TrendingMoviesProps {
   movies: Movie[];
+  navigation: NavigationProps<'MainHome'>;
 }
 
-const TrendingMovies = ({movies}: TrendingMoviesProps): JSX.Element => {
+const TrendingMovies = ({movies, navigation}: TrendingMoviesProps): JSX.Element => {
   const renderItem = useCallback(
     ({item}: {item: Movie}) => (
       <TrendingMovieCard
@@ -42,6 +45,14 @@ const TrendingMovies = ({movies}: TrendingMoviesProps): JSX.Element => {
     [],
   );
 
+  const handleSeeAllCLick = () => {
+    navigation.navigate('MoviesGrid', {
+      genre: genres.all,
+      type: 'trending',
+      title: 'More Trending',
+    });
+  };
+
   return (
     <View className="my-7">
       <Text className="text-2xl text-primary_text font-heading-500 px-4">Trending Movies</Text>
@@ -58,7 +69,7 @@ const TrendingMovies = ({movies}: TrendingMoviesProps): JSX.Element => {
           maxHeight: 200,
           alignItems: 'center',
         }}
-        ListFooterComponent={() => <SeeAllButton />}
+        ListFooterComponent={() => <SeeAllButton handleClick={handleSeeAllCLick} />}
         getItemLayout={getItemLayout}
       />
     </View>

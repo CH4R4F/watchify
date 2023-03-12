@@ -1,16 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {FlatList} from 'react-native';
 import React, {useCallback} from 'react';
-import {MovieCardProps} from '../@types';
+import {MovieCardProps, MovieGenre, NavigationProps} from '../@types';
 import SeeAllButton from './SeeAllButton';
 import MovieCard from './MovieCard';
 import MovieCardLoader from './Loaders/MovieCardLoader';
+import {genres} from '../constants';
 
 type Props = {
   movies: MovieCardProps[];
   loading: boolean;
+  navigation: NavigationProps<'MainHome'>;
+  category: keyof MovieGenre;
+  type: 'trending' | 'popular' | 'top_rated' | 'upcoming';
 };
 
-const CardsRow = ({movies, loading}: Props) => {
+const CardsRow = ({movies, loading, navigation, category, type}: Props) => {
   const ITEM_WIDTH = 100;
 
   const renderItem = useCallback(
@@ -18,7 +23,7 @@ const CardsRow = ({movies, loading}: Props) => {
       if (loading) {
         return <MovieCardLoader />;
       }
-      return <MovieCard movie={item} />;
+      return <MovieCard onPress={() => console.log('hello')} movie={item} />;
     },
     [loading],
   );
@@ -34,6 +39,16 @@ const CardsRow = ({movies, loading}: Props) => {
     [],
   );
 
+  const ListFooterComponent = useCallback(() => <SeeAllButton handleClick={handleSeeAllCLick} />, []);
+
+  const handleSeeAllCLick = () => {
+    navigation.navigate('MoviesGrid', {
+      genre: genres[category],
+      type,
+      title: `More ${type}`,
+    });
+  };
+
   return (
     <FlatList
       initialNumToRender={2}
@@ -48,7 +63,7 @@ const CardsRow = ({movies, loading}: Props) => {
         maxHeight: 200,
         alignItems: 'center',
       }}
-      ListFooterComponent={() => <SeeAllButton />}
+      ListFooterComponent={ListFooterComponent}
       getItemLayout={getItemLayout}
     />
   );

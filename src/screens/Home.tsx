@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState, useMemo} from 'react';
 import Header from '../components/Header';
 import {getTrendingMovies} from '../services/tmdb';
@@ -9,8 +10,13 @@ import {MovieGenre} from '../@types';
 import {ScrollView, View} from 'react-native';
 import TopRated from '../components/Home/TopRated';
 import Popular from '../components/Home/Popular';
+import {NavigationProps} from '../@types';
 
-const Home = (): JSX.Element => {
+type Props = {
+  navigation: NavigationProps<'MainHome'>;
+};
+
+const Home = ({navigation}: Props): JSX.Element => {
   const [movies, setMovies] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState<keyof MovieGenre>('all');
 
@@ -21,7 +27,7 @@ const Home = (): JSX.Element => {
   }, []);
 
   const TrendingMoviesMemoComponent = useMemo(() => {
-    return <TrendingMovies movies={movies} />;
+    return <TrendingMovies movies={movies} navigation={navigation} />;
   }, [movies]);
 
   return (
@@ -39,9 +45,9 @@ const Home = (): JSX.Element => {
 
           <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
 
-          <Popular category={selectedCategory} />
+          <Popular navigation={navigation} category={selectedCategory} />
 
-          <TopRated category={selectedCategory} />
+          <TopRated navigation={navigation} category={selectedCategory} />
         </LinearGradient>
       </ScrollView>
     </View>
