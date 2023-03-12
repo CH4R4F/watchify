@@ -2,7 +2,6 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import OnBoarding from '../screens/OnBoarding';
 import MainNavigation from './main';
-import {colors} from '../constants';
 
 const Stack = createStackNavigator();
 
