@@ -13,7 +13,7 @@ const CategoryButton = ({title, onPress, active}: Props) => {
     <TouchableWithoutFeedback onPress={onPress}>
       <View
         className={'px-3 py-2 min-w-[100px] items-center mr-4 rounded-full'}
-        style={{backgroundColor: active ? colors.primary : colors.secondary_bg}}>
+        style={{backgroundColor: active ? colors.primary : colors.primary_bg}}>
         <Text
           className="font-text-600"
           style={{
