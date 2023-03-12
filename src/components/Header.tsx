@@ -4,7 +4,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const Header = () => {
   return (
-    <View className="w-full flex-row items-center justify-between px-4 pt-3">
+    <View className="bg-primary_bg w-full flex-row items-center justify-between px-4 pt-3">
       <TouchableWithoutFeedback>
         <Feather name="menu" size={26} color="#fff" />
       </TouchableWithoutFeedback>

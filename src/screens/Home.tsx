@@ -6,7 +6,7 @@ import {colors} from '../constants';
 import TrendingMovies from '../components/Home/TrendingMovies';
 import Categories from '../components/Home/Categories';
 import {MovieGenre} from '../@types';
-import {ScrollView} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import TopRated from '../components/Home/TopRated';
 
 const Home = (): JSX.Element => {
@@ -24,21 +24,24 @@ const Home = (): JSX.Element => {
   }, [movies]);
 
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      className="min-h-screen"
-      contentContainerStyle={{paddingBottom: 50, minHeight: '100%'}}>
-      <LinearGradient
-        colors={[colors.primary_bg, colors.secondary_bg, colors.primary_bg]}
-        className="flex-1 bg-gradient-to-t from-primary_bg via-secondary_bg to-primary_bg pb-36">
-        <Header />
-        {TrendingMoviesMemoComponent}
+    <View>
+      <Header />
 
-        <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        className=""
+        contentContainerStyle={{paddingBottom: 50, minHeight: '100%'}}>
+        <LinearGradient
+          colors={[colors.primary_bg, colors.secondary_bg, colors.primary_bg]}
+          className="relative flex-1 bg-gradient-to-t from-primary_bg via-secondary_bg to-primary_bg pb-36">
+          {TrendingMoviesMemoComponent}
 
-        <TopRated category={selectedCategory} />
-      </LinearGradient>
-    </ScrollView>
+          <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+
+          <TopRated category={selectedCategory} />
+        </LinearGradient>
+      </ScrollView>
+    </View>
   );
 };
 
