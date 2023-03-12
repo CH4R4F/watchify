@@ -15,12 +15,6 @@ export const getConfiguration = async () => {
   return data;
 };
 
-// get popular movies
-export const getPopularMovies = async () => {
-  const {data} = await tmdb.get('/movie/popular');
-  return data;
-};
-
 // get trending movies
 export const getTrendingMovies = async (page: number = 1) => {
   const {data} = await tmdb.get('/trending/movie/week', {
@@ -45,6 +39,27 @@ export const getTopRatedMovies = async (genreId?: number | null, page: number = 
   }
 
   const {data} = await tmdb.get('/movie/top_rated', {
+    params: {
+      page,
+    },
+  });
+  return data;
+};
+
+// get popular movies for a specific genre, if no genre detected get for all movies
+export const getPopularMovies = async (genreId?: number | null, page: number = 1) => {
+  if (genreId) {
+    const {data} = await tmdb.get('/discover/movie', {
+      params: {
+        with_genres: genreId,
+        sort_by: 'popularity.desc',
+        page,
+      },
+    });
+    return data;
+  }
+
+  const {data} = await tmdb.get('/movie/popular', {
     params: {
       page,
     },

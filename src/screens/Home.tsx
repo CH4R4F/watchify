@@ -8,6 +8,7 @@ import Categories from '../components/Home/Categories';
 import {MovieGenre} from '../@types';
 import {ScrollView, View} from 'react-native';
 import TopRated from '../components/Home/TopRated';
+import Popular from '../components/Home/Popular';
 
 const Home = (): JSX.Element => {
   const [movies, setMovies] = useState([]);
@@ -37,6 +38,8 @@ const Home = (): JSX.Element => {
           {TrendingMoviesMemoComponent}
 
           <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+
+          <Popular category={selectedCategory} />
 
           <TopRated category={selectedCategory} />
         </LinearGradient>

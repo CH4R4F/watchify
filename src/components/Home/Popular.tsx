@@ -2,21 +2,21 @@ import {View, Text} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {MovieCardProps, MovieGenre} from '../../@types';
 import {genres} from '../../constants';
-import {getTopRatedMovies} from '../../services/tmdb';
+import {getPopularMovies} from '../../services/tmdb';
 import CardsRow from '../CardsRow';
 
 type Props = {
   category: keyof MovieGenre;
 };
 
-const TopRated = ({category}: Props) => {
+const Popular = ({category}: Props) => {
   const [movies, setMovies] = useState<MovieCardProps[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
       setLoading(true);
-      const data = await getTopRatedMovies(genres[category], 1);
+      const data = await getPopularMovies(genres[category], 1);
       setMovies(data.results);
       setLoading(false);
     };
@@ -25,13 +25,12 @@ const TopRated = ({category}: Props) => {
 
   return (
     <View>
-      <Text className="px-4 pt-10 pb-3">
-        <Text className="text-lg text-primary_text font-heading-500">Top Rated </Text>
+      <Text className="px-4 pb-3 pt-10">
+        <Text className="text-lg text-primary_text font-heading-500">Popular Movies</Text>
       </Text>
-      {/* {loading && <Text>Loading...</Text>} */}
       <CardsRow loading={loading} movies={movies} />
     </View>
   );
 };
 
-export default TopRated;
+export default Popular;
