@@ -11,7 +11,7 @@ export const colors = {
 };
 
 export const genres: MovieGenre = {
-  all: '',
+  all: null,
   action: 28,
   adventure: 12,
   comedy: 35,
