@@ -8,7 +8,7 @@ export type OnBoardingScreenData = {
 };
 
 export type MovieGenre = {
-  all: null | '';
+  all: null;
   action: number;
   adventure: number;
   comedy: number;
@@ -19,4 +19,11 @@ export type MovieGenre = {
   history: number;
   horror: number;
   romance: number;
+};
+
+export type MovieCardProps = {
+  id: number;
+  original_title: string;
+  poster_path?: string;
+  vote_average: number;
 };
