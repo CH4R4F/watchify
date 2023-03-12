@@ -32,7 +32,7 @@ export const getTrendingMovies = async (page: number = 1) => {
 };
 
 // get top rated movies for a specific genre, if no genre detected get for all movies
-export const getTopRatedMovies = async (genreId?: number, page: number = 1) => {
+export const getTopRatedMovies = async (genreId?: number | null, page: number = 1) => {
   if (genreId) {
     const {data} = await tmdb.get('/discover/movie', {
       params: {
