@@ -1,4 +1,4 @@
-import {FlatList, Text} from 'react-native';
+import {FlatList} from 'react-native';
 import React, {useCallback} from 'react';
 import {MovieCardProps} from '../@types';
 import SeeAllButton from './SeeAllButton';
