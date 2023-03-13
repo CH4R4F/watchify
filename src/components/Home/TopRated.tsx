@@ -12,14 +12,11 @@ type Props = {
 
 const TopRated = ({category, navigation}: Props) => {
   const [movies, setMovies] = useState<MovieCardProps[]>([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      setLoading(true);
       const data = await getTopRatedMovies(genres[category], 1);
       setMovies(data.results);
-      setLoading(false);
     };
     fetchMovies();
   }, [category]);
@@ -30,7 +27,7 @@ const TopRated = ({category, navigation}: Props) => {
         <Text className="text-lg text-primary_text font-heading-500">Top Rated </Text>
       </Text>
       {/* {loading && <Text>Loading...</Text>} */}
-      <CardsRow category={category} navigation={navigation} type="top_rated" loading={loading} movies={movies} />
+      <CardsRow category={category} navigation={navigation} type="top_rated" movies={movies} />
     </View>
   );
 };

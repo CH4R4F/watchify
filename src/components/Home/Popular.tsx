@@ -13,14 +13,11 @@ type Props = {
 
 const Popular = ({category, navigation}: Props) => {
   const [movies, setMovies] = useState<MovieCardProps[]>([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      setLoading(true);
       const data = await getPopularMovies(genres[category], 1);
       setMovies(data.results);
-      setLoading(false);
     };
     fetchMovies();
   }, [category]);
@@ -30,7 +27,7 @@ const Popular = ({category, navigation}: Props) => {
       <Text className="px-4 pb-3 pt-10">
         <Text className="text-lg text-primary_text font-heading-500">Popular Movies</Text>
       </Text>
-      <CardsRow type="popular" navigation={navigation} category={category} loading={loading} movies={movies} />
+      <CardsRow type="popular" navigation={navigation} category={category} movies={movies} />
     </View>
   );
 };

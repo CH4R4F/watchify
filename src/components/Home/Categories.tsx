@@ -1,15 +1,13 @@
 import {View, Text, FlatList} from 'react-native';
-import React, {useCallback} from 'react';
+import React, {useCallback, useContext} from 'react';
 import {genres} from '../../constants';
 import {MovieGenre} from '../../@types';
 import CategoryButton from '../CategoryButton';
+import DataContext from '../../contexts/DataProvider';
 
-type CategoriesProps = {
-  selectedCategory: keyof MovieGenre;
-  setSelectedCategory: React.Dispatch<React.SetStateAction<keyof MovieGenre>>;
-};
+const Categories = () => {
+  const {selectedCategory, setSelectedCategory} = useContext(DataContext);
 
-const Categories = ({selectedCategory, setSelectedCategory}: CategoriesProps) => {
   const renderItem = useCallback(
     ({item}: {item: keyof MovieGenre}) => (
       <CategoryButton

@@ -4,29 +4,21 @@ import React, {useCallback} from 'react';
 import {MovieCardProps, MovieGenre, NavigationProps} from '../@types';
 import SeeAllButton from './SeeAllButton';
 import MovieCard from './MovieCard';
-import MovieCardLoader from './Loaders/MovieCardLoader';
 import {genres} from '../constants';
 
 type Props = {
   movies: MovieCardProps[];
-  loading: boolean;
   navigation: NavigationProps<'MainHome'>;
   category: keyof MovieGenre;
   type: 'trending' | 'popular' | 'top_rated' | 'upcoming';
 };
 
-const CardsRow = ({movies, loading, navigation, category, type}: Props) => {
+const CardsRow = ({movies, navigation, category, type}: Props) => {
   const ITEM_WIDTH = 100;
 
-  const renderItem = useCallback(
-    ({item}: {item: MovieCardProps}) => {
-      if (loading) {
-        return <MovieCardLoader />;
-      }
-      return <MovieCard onPress={() => console.log('hello')} movie={item} />;
-    },
-    [loading],
-  );
+  const renderItem = useCallback(({item}: {item: MovieCardProps}) => {
+    return <MovieCard onPress={() => console.log('hello')} movie={item} />;
+  }, []);
 
   const keyExtractor = useCallback((item: MovieCardProps) => item.id.toString(), []);
 

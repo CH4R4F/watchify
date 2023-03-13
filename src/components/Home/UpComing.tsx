@@ -12,14 +12,11 @@ type Props = {
 
 const UpComing = ({category, navigation}: Props) => {
   const [movies, setMovies] = useState<MovieCardProps[]>([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      setLoading(true);
       const data = await getUpcomingMovies(genres[category], 1);
       setMovies(data.results);
-      setLoading(false);
     };
     fetchMovies();
   }, [category]);
@@ -30,7 +27,7 @@ const UpComing = ({category, navigation}: Props) => {
         <Text className="text-lg text-primary_text font-heading-500">Upcoming Movies</Text>
       </Text>
       {/* {loading && <Text>Loading...</Text>} */}
-      <CardsRow category={category} navigation={navigation} type="upcoming" loading={loading} movies={movies} />
+      <CardsRow category={category} navigation={navigation} type="upcoming" movies={movies} />
     </View>
   );
 };
