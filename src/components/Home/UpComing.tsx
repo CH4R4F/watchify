@@ -30,7 +30,7 @@ const UpComing = ({category, navigation}: Props) => {
         <Text className="text-lg text-primary_text font-heading-500">Upcoming Movies</Text>
       </Text>
       {/* {loading && <Text>Loading...</Text>} */}
-      <CardsRow category={category} navigation={navigation} type="top_rated" loading={loading} movies={movies} />
+      <CardsRow category={category} navigation={navigation} type="upcoming" loading={loading} movies={movies} />
     </View>
   );
 };
