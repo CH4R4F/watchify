@@ -35,10 +35,7 @@ const Home = ({navigation}: Props): JSX.Element => {
     <View>
       <Header />
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        className=""
-        contentContainerStyle={{paddingBottom: 50, minHeight: '100%'}}>
+      <ScrollView showsVerticalScrollIndicator={false} className="" contentContainerStyle={{minHeight: '100%'}}>
         <LinearGradient
           colors={[colors.primary_bg, colors.secondary_bg, colors.primary_bg]}
           className="relative flex-1 bg-gradient-to-t from-primary_bg via-secondary_bg to-primary_bg pb-36">
