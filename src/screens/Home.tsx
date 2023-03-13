@@ -10,6 +10,7 @@ import {MovieGenre} from '../@types';
 import {ScrollView, View} from 'react-native';
 import TopRated from '../components/Home/TopRated';
 import Popular from '../components/Home/Popular';
+import UpComing from '../components/Home/UpComing';
 import {NavigationProps} from '../@types';
 
 type Props = {
@@ -48,6 +49,8 @@ const Home = ({navigation}: Props): JSX.Element => {
           <Popular navigation={navigation} category={selectedCategory} />
 
           <TopRated navigation={navigation} category={selectedCategory} />
+
+          <UpComing navigation={navigation} category={selectedCategory} />
         </LinearGradient>
       </ScrollView>
     </View>

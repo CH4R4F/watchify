@@ -66,3 +66,24 @@ export const getPopularMovies = async (genreId?: number | null, page: number = 1
   });
   return data;
 };
+
+// get upcoming movies for a specific genre, if no genre detected get for all movies
+export const getUpcomingMovies = async (genreId?: number | null, page: number = 1) => {
+  if (genreId) {
+    const {data} = await tmdb.get('/discover/movie', {
+      params: {
+        with_genres: genreId,
+        sort_by: 'release_date.desc',
+        page,
+      },
+    });
+    return data;
+  }
+
+  const {data} = await tmdb.get('/movie/upcoming', {
+    params: {
+      page,
+    },
+  });
+  return data;
+};
